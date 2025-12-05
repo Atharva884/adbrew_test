@@ -1,0 +1,167 @@
+.todo-form-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.2s ease;
+  height: fit-content;
+}
+
+.todo-form-container:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.todo-form-container h2 {
+  margin: 0 0 24px 0;
+  color: var(--supabase-green);
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px 16px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--foreground);
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--supabase-green);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: hsl(0, 62.8%, 50%);
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background-color: var(--secondary);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error-message {
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border-left: 4px solid #ef4444;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.error-message::before {
+  font-size: 1.2rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.submit-button,
+.cancel-button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.submit-button {
+  background: var(--supabase-green);
+  color: white;
+  border: 1px solid var(--supabase-green);
+}
+
+.submit-button:hover:not(:disabled) {
+  background: var(--supabase-green-dark);
+  border-color: var(--supabase-green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  background: var(--secondary);
+  color: var(--muted-foreground);
+  border-color: var(--border);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cancel-button {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.cancel-button:hover:not(:disabled) {
+  background: var(--secondary);
+  border-color: var(--border-hover);
+}
+
+.todo-form-container.edit-mode {
+  border-color: var(--supabase-green);
+  box-shadow: 0 0 0 1px var(--supabase-green);
+}
+
+@media (max-width: 768px) {
+  .todo-form-container {
+    padding: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
