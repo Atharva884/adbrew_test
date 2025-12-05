@@ -1,0 +1,129 @@
+.stats-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-color);
+}
+
+.stats-card-green {
+  --card-color: var(--supabase-green);
+}
+
+.stats-card-green::before {
+  background: var(--supabase-green);
+}
+
+.stats-card-orange {
+  --card-color: var(--orange);
+}
+
+.stats-card-orange::before {
+  background: var(--orange);
+}
+
+.stats-card-blue {
+  --card-color: var(--blue);
+}
+
+.stats-card-blue::before {
+  background: var(--blue);
+}
+
+.stats-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.stats-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stats-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stats-card-title {
+  font-size: 0.95rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.stats-card-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1;
+}
+
+.stats-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-bg {
+  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.stats-card-green .icon-bg {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.2);
+  color: var(--supabase-green);
+}
+
+.stats-card-orange .icon-bg {
+  background: rgba(251, 146, 60, 0.1);
+  border-color: rgba(251, 146, 60, 0.2);
+  color: var(--orange);
+}
+
+.stats-card-blue .icon-bg {
+  background: rgba(96, 165, 250, 0.1);
+  border-color: rgba(96, 165, 250, 0.2);
+  color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .stats-card {
+    padding: 20px;
+  }
+
+  .stats-card-value {
+    font-size: 2rem;
+  }
+
+  .icon-bg {
+    width: 50px;
+    height: 50px;
+    font-size: 1.75rem;
+  }
+}
