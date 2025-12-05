@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+db.sqlite3
+local_settings.py
+
+/media/
+/staticfiles/
+
+.env
+.venv/
+venv/
+
+# Logs
+*.log
+
+# React / Node.js
+node_modules/
+build/
+dist/
+
+# Environment variables
+*.env
+.env.local
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# MongoDB (local dev only)
+/data/
+*.lock
+WiredTiger*
+
+# Docker artifacts
+*.tar
